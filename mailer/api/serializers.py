@@ -18,7 +18,7 @@ class MailSerializer(serializers.ModelSerializer):
     recipients = serializers.SerializerMethodField("get_mail_recipients")
 
     def get_mail_recipients(self, instance):
-        return map_recipient_set(instance.recipient_set.all())
+        return map_recipient_set(instance.recipient_set.all())._asdict()
 
     class Meta:
         model = Mail

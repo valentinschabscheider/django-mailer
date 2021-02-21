@@ -23,6 +23,10 @@ class Mail(models.Model):
 
     sent_at = models.DateTimeField(null=True, editable=False)
 
+    @property
+    def sent(self):
+        return self.sent_at is not None
+
     def __str__(self):
         return f'{self.from_address}({self.from_name}), "{Truncator(self.body_text).chars(20)}"'
 
@@ -46,7 +50,6 @@ class Mail(models.Model):
 
 
 class Recipient(models.Model):
-
     mail = models.ForeignKey(Mail, on_delete=models.CASCADE)
 
     TO = "TO"
