@@ -13,6 +13,7 @@ python django mailer
 | /mailer/mails/<id>                               | html               | show mail header, body (iframe) and status |
 | /mailer/api/mails                                | rest create        |                                            |
 | /mailer/api/mails/<id>                           | rest update delete |                                            |
+| /mailer/api/mails/<id>/recipients                | rest               |                                            |
 | /mailer/api/mails/<id>/send                      | rest               |                                            |
 | /mailer/api/templates                            | rest               |                                            |
 
